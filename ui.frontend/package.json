@@ -38,7 +38,6 @@
     "clone": "^2.1.2",
     "css-loader": "^3.4.2",
     "ignore-styles": "^5.0.1",
-    "sass-loader": "^6.0.7",
     "style-loader": "^0.20.3",
     "typescript": "^3.4.2",
     "webpack": "4.44.2",

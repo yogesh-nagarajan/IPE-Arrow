@@ -35,7 +35,7 @@
             
     <module>core</module>
             
-    <module>ui.frontend</module>
+     <module>ui.frontend</module>
              
     <module>ui.apps</module>
             
@@ -251,7 +251,7 @@
                                     
             <execution>
                                           
-              <id>npm ci</id>
+              <id>npm install</id>
                                           
               <goals>
                                                 
@@ -261,7 +261,7 @@
                                           
               <configuration>
                                               
-                <arguments>ci</arguments>
+                <arguments>install</arguments>
                                             
               </configuration>
                                       
