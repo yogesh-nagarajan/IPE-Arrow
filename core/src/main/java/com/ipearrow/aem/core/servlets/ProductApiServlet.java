@@ -22,13 +22,10 @@ import org.osgi.service.component.annotations.Component;
 import static org.apache.sling.api.servlets.ServletResolverConstants.SLING_SERVLET_PATHS;
 import static org.apache.sling.api.servlets.ServletResolverConstants.SLING_SERVLET_METHODS;
 
-@Component(
-    service = Servlet.class,
-    property = {
+@Component(service = Servlet.class, property = {
         SLING_SERVLET_METHODS + "=GET",
         SLING_SERVLET_PATHS + "=/bin/productapi"
-    }
-)
+})
 public class ProductApiServlet extends SlingSafeMethodsServlet {
 
     @Override
@@ -39,7 +36,7 @@ public class ProductApiServlet extends SlingSafeMethodsServlet {
 
         String productId = request.getParameter("id");
 
-        String apiUrl ="http://localhost:3000/api/products/" + productId;
+        String apiUrl = "http://localhost:3000/api/products/" + productId;
 
         CloseableHttpClient client = HttpClients.createDefault();
 
@@ -51,7 +48,17 @@ public class ProductApiServlet extends SlingSafeMethodsServlet {
 
         response.setContentType("application/json");
 
-        response.getWriter().write(jsonResponse);
+        if (jsonResponse.contains("Interconnect")
+                || jsonResponse.contains("Passives")
+                || jsonResponse.contains("Electromechanical")) {
+
+            response.getWriter().write(jsonResponse);
+
+        } else {
+
+            response.getWriter().write(
+                    "{\"error\":\"Category not allowed for IP&E\"}");
+        }
 
         apiResponse.close();
         client.close();
