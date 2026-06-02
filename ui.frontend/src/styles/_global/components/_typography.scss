@@ -1,0 +1,58 @@
+h1,
+h2,
+h3,
+h4,
+h5,
+h6,
+p {
+  border: 0;
+  font-size: 100%;
+  margin: 0;
+  padding: 0;
+  vertical-align: baseline;
+}
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+  color: var(--color-heading);
+  font-family: var(--font-family-base);
+  text-transform: uppercase;
+}
+
+p {
+  color: var(--color-text);
+  font-family: var(--font-family-base);
+  font-size: var(--font-size-body);
+  font-weight: 200;
+  line-height: var(--line-height-body);
+}
+
+h1 {
+  font-size: 3rem;
+  letter-spacing: 0.08em;
+}
+
+h2 {
+  font-size: 3rem;
+  font-weight: 700;
+  letter-spacing: 0.02em;
+}
+
+h3 {
+  font-size: 1.125rem;
+  font-weight: 700;
+  letter-spacing: 0.02em;
+  padding: 0.25rem 0;
+}
+
+a {
+  color: var(--color-accent);
+}
+
+.cmp-text--accent {
+  color: var(--color-accent);
+}

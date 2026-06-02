@@ -1,0 +1,16 @@
+// Semantic token names (values are set per brand in brands/*/colors.scss).
+// Components must only reference these variables, never hard-coded brand colors.
+
+:root {
+  // Typography
+  --font-family-base: system-ui, sans-serif;
+  --font-size-body: 1.125rem;
+  --line-height-body: 1.75;
+
+  // Colors (overridden by each brand)
+  --color-text: #333;
+  --color-heading: #111;
+  --color-accent: #0066cc;
+  --color-surface: #fff;
+  --color-border: #e0e0e0;
+}

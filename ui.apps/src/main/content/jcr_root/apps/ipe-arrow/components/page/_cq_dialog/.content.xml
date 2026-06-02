@@ -45,6 +45,10 @@
                                                 jcr:primaryType="nt:unstructured"
                                                 text="IPE"
                                                 value="ipe"/>
+                                            <abc
+                                                jcr:primaryType="nt:unstructured"
+                                                text="ABC Arrow"
+                                                value="abc"/>
                                         </items>
                                     </theme>
                                 </items>

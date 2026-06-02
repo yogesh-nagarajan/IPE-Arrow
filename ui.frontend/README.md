@@ -33,6 +33,32 @@ Builds the app for production to the `build` folder. It bundles React in product
 
 Furthermore, an AEM ClientLib is generated from the app using the [`aem-clientlib-generator`](https://github.com/wcm-io-frontend/aem-clientlib-generator) package.
 
+### Brand themes (`npm run build:themes`)
+
+Multi-brand CSS is built separately from the React SPA:
+
+```
+src/styles/
+  _global/              # shared components using CSS custom properties
+    tokens/
+    components/
+    main.scss
+  brands/
+    arrow/              # brand color tokens only
+    ipe-arrow/
+    abc-arrow/
+```
+
+Webpack (`webpack.theme.config.js`) compiles one CSS bundle per brand into `dist/themes/`. The script then generates AEM clientlibs:
+
+| Brand folder | Clientlib | AEM category | Page theme property |
+|--------------|-----------|--------------|---------------------|
+| `arrow` | `clientlib-arrow` | `ipe-arrow.arrow` | `arrow` |
+| `ipe-arrow` | `clientlib-ipe-arrow` | `ipe-arrow.ipe` | `ipe` |
+| `abc-arrow` | `clientlib-abc-arrow` | `ipe-arrow.abc` | `abc` |
+
+Add or rename brands in `config/brands.js`, create a matching folder under `src/styles/brands/`, then run `npm run build:themes`. The full `npm run build` (and Maven `ui.frontend` build) includes theme clientlibs automatically.
+
 ## Browser Support
 
 By default, this project uses [Browserslist](https://github.com/browserslist/browserslist)'s `defaults` option to identify target browsers. Additionally, it includes polyfills for modern language features to support older browsers (e.g. Internet Explorer 11). If supporting such browsers isn't a requirement, the polyfill dependencies and imports can be removed.

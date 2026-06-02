@@ -15,12 +15,14 @@
 */-->
 <sly data-sly-use.clientlib="core/wcm/components/commons/v1/templates/clientlib.html">
     <sly data-sly-test="${properties.theme == 'ipe'}">
-    <sly data-sly-call="${clientlib.css @ categories='ipe-arrow.ipe'}"/>
-</sly>
-
-<sly data-sly-test="${properties.theme == 'arrow'}">
-    <sly data-sly-call="${clientlib.css @ categories='ipe-arrow.arrow'}"/>
-</sly>
+        <sly data-sly-call="${clientlib.css @ categories='ipe-arrow.ipe'}"/>
+    </sly>
+    <sly data-sly-test="${properties.theme == 'arrow'}">
+        <sly data-sly-call="${clientlib.css @ categories='ipe-arrow.arrow'}"/>
+    </sly>
+    <sly data-sly-test="${properties.theme == 'abc'}">
+        <sly data-sly-call="${clientlib.css @ categories='ipe-arrow.abc'}"/>
+    </sly>
 </sly>
 
 <!--/*
