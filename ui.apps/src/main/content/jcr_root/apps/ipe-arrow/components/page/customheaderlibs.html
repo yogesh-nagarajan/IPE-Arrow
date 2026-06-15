@@ -13,20 +13,18 @@
     See the License for the specific language governing permissions and
     limitations under the License.
 */-->
+<sly data-sly-use.theme="com.ipearrow.aem.core.models.ThemeResolverModel">
 <sly data-sly-use.clientlib="core/wcm/components/commons/v1/templates/clientlib.html">
-    <sly data-sly-call="${clientlib.css @ categories='ipe-arrow.base'}"/>
-
-    <sly data-sly-test="${properties.theme == 'ipe'}">
+    <sly data-sly-test="${theme.theme == 'ipe'}">
         <sly data-sly-call="${clientlib.css @ categories='ipe-arrow.ipe'}"/>
     </sly>
-
-    <sly data-sly-test="${properties.theme == 'arrow'}">
+    <sly data-sly-test="${theme.theme == 'arrow'}">
         <sly data-sly-call="${clientlib.css @ categories='ipe-arrow.arrow'}"/>
     </sly>
-
-    <sly data-sly-test="${properties.theme == 'abc'}">
+    <sly data-sly-test="${theme.theme == 'abc'}">
         <sly data-sly-call="${clientlib.css @ categories='ipe-arrow.abc'}"/>
     </sly>
+</sly>
 </sly>
 
 <!--/*
